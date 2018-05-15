@@ -41,13 +41,13 @@ before_install:
     php -r "print_r(get_loaded_extensions(TRUE));"
   fi
 install:
-- composer global require sensiolabs/security-checker
-# - composer install
 - |
   composer create-project --no-install symfony/skeleton
   cd skeleton
   composer config bin-dir bin
   composer install
+# - composer install # Needs to be after to allow the previous script to show downloads of new versions.
+- composer global require sensiolabs/security-checker # At the end, not to interfer with showing downloads of new versions.
 
 script:
 - false # This .travis.yml has been copied from another repository and needs to be adapted!
