@@ -42,7 +42,7 @@ before_install:
   fi
 install:
 - composer global require sensiolabs/security-checker
-- composer --working-dir=.. install
+# - composer install
 - |
   composer create-project --no-install symfony/skeleton
   cd skeleton
@@ -53,7 +53,7 @@ script:
 - false # This .travis.yml has been copied from another repository and needs to be adapted!
 # - composer require --no-scripts sensiolabs/security-checker &> /dev/null && composer exec --verbose security-checker security:check -- --end-point=http://security.sensiolabs.org/check_lock --ansi
 - composer global exec --verbose                  -- security-checker security:check --end-point=http://security.sensiolabs.org/check_lock --ansi
-- composer global exec --verbose --working-dir=.. -- security-checker security:check --end-point=http://security.sensiolabs.org/check_lock --ansi
+# - composer global exec --verbose --working-dir=.. -- security-checker security:check --end-point=http://security.sensiolabs.org/check_lock --ansi
 - composer exec --verbose -- console --ansi
 
 after_script:
