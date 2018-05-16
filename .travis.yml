@@ -6,7 +6,7 @@ addons:
     packages:
     - colordiff
     - elinks # For dysplaying php files on console.
-    - moreutils
+    - moreutils # pee
 
 cache:
   directories:
