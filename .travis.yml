@@ -76,7 +76,7 @@ script:
   #^ This checks that the application doesn't use dependencies with known security vulnerabilities
 
 
-- false # This .travis.yml has been copied from another repository and needs to be adapted!
+# - false # This .travis.yml has been copied from another repository and needs to be adapted!
 - composer exec --verbose -- console --ansi
 
 after_script:
